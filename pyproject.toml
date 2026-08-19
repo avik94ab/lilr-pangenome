@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lilr-pangenome"
+version = "0.1.0"
+description = "LILR copy number and sequence genotyping from haplotype-resolved pangenome assemblies"
+requires-python = ">=3.10"
+dependencies = [
+    "biopython>=1.81",
+    "pandas>=2.0",
+]
+
+[project.scripts]
+lilr-pangenome = "lilr_pangenome.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lilr_pangenome*"]
+
+[tool.setuptools.package-data]
+lilr_pangenome = []
+
+[tool.setuptools]
+include-package-data = false
